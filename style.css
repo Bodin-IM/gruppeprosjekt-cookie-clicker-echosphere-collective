@@ -6,13 +6,13 @@
   .toppane {
     width: 100%;
     height: 100px;
-    background-color: grey;
+    background-color: rgb(242, 237, 237);
   }
   
   .leftpane {
     width: 25%;
     height: 100vh;
-    background-color: lightgrey
+    background-color: rgb(187, 187, 187)
     ;
   }
   
@@ -35,3 +35,13 @@
   .d-flex {
     display: flex;
   }
+body{
+background-color: antiquewhite;
+text-align: center;
+
+
+}
+#instructions{
+    border: double 10px black;
+
+    }
