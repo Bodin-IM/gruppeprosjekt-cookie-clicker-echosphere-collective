@@ -6,25 +6,26 @@
   .toppane {
     width: 100%;
     height: 100px;
-    background-color: #4da6ff;
+    background-color: grey;
   }
   
   .leftpane {
     width: 25%;
     height: 100vh;
-    background-color: rosybrown;
+    background-color: lightgrey
+    ;
   }
   
   .middlepane {
     width: 50%;
     height: 100vh;
-    background-color: royalblue;
+    background-color: lightslategrey;
   }
   
   .rightpane {
     width: 25%;
     height: 100vh;
-    background-color: yellow;
+    background-color: lightgrey;
   }
   
   body {
