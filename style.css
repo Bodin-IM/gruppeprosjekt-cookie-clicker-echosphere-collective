@@ -26,6 +26,8 @@
     width: 25%;
     height: 100vh;
     background-color: lightgrey;
+    display: flex;
+    flex-direction: column;
   }
   
   body {
