@@ -1,4 +1,9 @@
 body{
     background-color: grey;
+   
+
+}
+
+.test {
     background-image: url('Radar\ background.jpg');
 }
