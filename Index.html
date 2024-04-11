@@ -12,25 +12,79 @@
     </style>       
 </head>
 <body>
+  
 
+
+<div class="container">
+  <div class="toppane">
+    <input type = "button" value="Toggle Display" onclick="switchMode()"/>
+  </div>
+  <div class="d-flex">
+    <div class="leftpane">
+      <h1>Test Page</h1>
+      <h1>Bomb-Clicker</h1>
+      <p id ="instructions">your mission is to bomb Afganistan! click the bomb to bomb them</p>
+      <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
+      <p>Bombs:<span id= "count">0</span></p>
+    </div>
+    <div class="middlepane">Test Page
+      <button onclick="buyTents()">tents [<span id="tentCost">15</span>] <span id="tents">0</span></button>
+    </div>
+
+    <div class="rightpane">
+      <h1>Test Page</h1>
+    </div>
+  </div>
+</div>
+  
+  <script>
+    var points = 1
     
+    var bombs = 0;
+    var tentCost = 15;
+    var tents = 0;
+    function buyTents (){
+      if (bombs>=tentCost) {
+        bombs = bombs - tentCost;
+        bombs = bombs +1;
+        tentCost = Math.round(tentCost * 1.15);
+        document.getElementById('count').innerHTML = bombs;
+        document.getElementById('tentCost').innerHTML = tentCost;
+        document.getElementById('tents').innerHTML = tents;
+        
+          }
+        }
+      
+        function addBomb(){
+          bombs +=points;
+          document.getElementById ('count').innerHTML = bombs;
+        }
+      
+        var nightmode = false;
+        
+        function switchmode(){
+            switchmode = !switchmode;
+            if (nightmode)
+              document.body.style.backgroundColor = "black";
+              document.body.style.color = "white"
+        }
+      
+        setInterval(function(){
+          count = points + tents * 15;
+          document.getElementById('count').innerHTML = bombs;
+        },);
+        
+        
+        
+        
+        
+        setInterval(function(){
+          count = points + container;
+          document.getElementById('count').innerHTML = count;
+         
+        }, 1000); // 1000ms = 1 second)
+          
+      </script>
 
-
-    <div class="container">
-        <div class="toppane">Test Page</div>
-        <div class="d-flex">
-          <div class="leftpane">
-            <h1>Test Page</h1>
-            <h1>Bomb-Clicker</h1>
-            <p id ="instructions">your mission is to bomb Afganistan! click the bomb to bomb them</p>
-            <img src="Tsar-bomba.png" width="80%">
-            <p>Bombs:</p>
-          </div>
-          <div class="middlepane">Test Page</div>
-          <div class="rightpane">
-            <h1>Test Page</h1>
-          </div>
-        </div>
-      </div>
 </body>
 </html>
