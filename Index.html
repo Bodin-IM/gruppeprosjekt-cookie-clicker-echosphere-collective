@@ -46,7 +46,7 @@
     function buyTents (){
       if (bombs>=tentCost) {
         bombs = bombs - tentCost;
-        bombs = bombs +1;
+        points = points * 1.5
         tentCost = Math.round(tentCost * 1.15);
         document.getElementById('count').innerHTML = bombs;
         document.getElementById('tentCost').innerHTML = tentCost;
