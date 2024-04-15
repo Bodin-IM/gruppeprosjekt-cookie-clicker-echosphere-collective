@@ -12,29 +12,55 @@
     </style>       
 </head>
 <body>
+
+    
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Bomb-Clicker</title>
+      <link rel="stylesheet" href="style.css">
   
-
-
-
-<div class="container">
-  <div class="toppane">
-    <input type = "button" value="Toggle Display" onclick="switchMode()"/>
-  </div>
-  <div class="d-flex">
-    <div class="leftpane">
-      <h1>Test Page</h1>
-      <h1>Bomb-Clicker</h1>
-      <p>Bombe</p>
-      <p id ="instructions">your mission is to bomb Afganistan! click the bomb to bomb them</p>
-      <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
-      <p>Bombs:</p>
+      <style>
+      
+      
+      </style>       
+  </head>
+  <body>
+    
+  
+  
+  
+  <div class="container">
+    <div class="toppane">
+      <input type = "button" value="Toggle Display" onclick="switchMode()"/>
     </div>
-    <div class="middlepane">Test Page
-        <div class="middlebox1">
+    <div class="d-flex">
+      <div class="leftpane">
+        <h1>Test Page</h1>
+        <h1>Bomb-Clicker</h1>
+        <p>Bombe</p>
+        <p id ="instructions">your mission is to bomb Afganistan! click the bomb to bomb them</p>
+        <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
+        <p>Bombs:<span id="count">0</span></p>
+      </div>
+      <div class="middlepane">Test Page
+          <div class="middlebox1">
+              <div class="ownedbuildingsbox">
+              
+                <img src="telt.png" alt="" height="50" 10%>
+                <img src="telt.png" alt="" height="50" 10%>
+            </div>
+          </div>
+          <div class="middlebox">
+              <div class="ownedbuildingsbox">
+                
+            </div>
+          </div>
+          <div class="middlebox">
             <div class="ownedbuildingsbox">
-            
-              <img src="telt.png" alt="" height="50" 10%>
-              <img src="telt.png" alt="" height="50" 10%>
+              
           </div>
         </div>
         <div class="middlebox">
@@ -42,122 +68,113 @@
               
           </div>
         </div>
-        <div class="middlebox">
-          <div class="ownedbuildingsbox">
-            
-        </div>
-      </div>
-      <div class="middlebox">
-          <div class="ownedbuildingsbox">
-            
-        </div>
+        
+  
+  
+          
       </div>
       
-
-
-        
-    </div>
-    
-
-    <div class="rightpane">
-      <h1>Upgrades</h1>
-      <div class="upgradebox">
-        <div class="upgradelane">
-          <img src="telt.png" alt="" height="50" 10%>
-          <img src="telt.png" alt="" height="50" 10%>
-          <div class="upgradelane"></div>
-
-        </div>
-      </div>
-      <h1>Buildings</h1>
-      <div class="box">
-          <h2>Telt</h2>
-          <button onclick="buyTents()">tents [<span id="tentCost">15</span>] <span id="tents">0</span></button>
-          <div class="price_box">
-              <h3>15</h3>
-              <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+  
+      <div class="rightpane">
+        <h1>Upgrades</h1>
+        <div class="upgradebox">
+          <div class="upgradelane">
+            <img src="telt.png" alt="" height="50" 10%>
+            <img src="telt.png" alt="" height="50" 10%>
+            <div class="upgradelane"></div>
+  
           </div>
-          <img src="telt.png" width="250">
-          
-          <div class="box">
-              <h2>Bo bil</h2>
-              <div class="price_box">
-                  <h3>100</h3>
-                  <img src="Tsar-bomba.png" alt="" width="50px" height="50">
-              </div>
-              <img src="Bo bil.png" width="250">
-              
-          
-              <div class="box">
-                  <h2>Container</h2>
-                  <div class="price_box">
-                      <h3>1100</h3>
-                      <img src="Tsar-bomba.png" alt="" width="50px" height="50">
-                  </div>
-                  <img src="container.png" width="220">
-
-                  <div class="box">
-                      <h2>Cave</h2>
-                      <div class="price_box">
-                          <h3>12000</h3>
-                          <img src="Tsar-bomba.png" alt="" width="50px" height="50">
-                      </div>
-                      <img src="cave.png" width="220">
+        </div>
+        <h1>Buildings</h1>
+        <div class="box">
+            <h2>Telt</h2>
+            <button onclick="buyTents()">tents [<span id="tentCost">15</span>] <span id="tents">0</span></button>
+            <div class="price_box">
+                <h3>15</h3>
+                <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+            </div>
+            <img src="telt.png" width="250">
+            
+            <div class="box">
+                <h2>Bo bil</h2>
+                <div class="price_box">
+                    <h3>100</h3>
+                    <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                </div>
+                <img src="Bo bil.png" width="250">
+                
+            
+                <div class="box">
+                    <h2>Container</h2>
+                    <div class="price_box">
+                        <h3>1100</h3>
+                        <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                    </div>
+                    <img src="container.png" width="220">
+  
+                    <div class="box">
+                        <h2>Cave</h2>
+                        <div class="price_box">
+                            <h3>12000</h3>
+                            <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                        </div>
+                        <img src="cave.png" width="220">
+        </div>
+  
       </div>
-
     </div>
   </div>
-</div>
-  <script>
-    var points = 1
-    
-    var bombs = 0;
-    var tentCost = 15;
-    var tents = 0;
-    function buyTents (){
-      if (bombs>=tentCost) {
-        bombs = bombs - tentCost;
-        points = points * 1.5
-        tentCost = Math.round(tentCost * 1.15);
-        document.getElementById('count').innerHTML = bombs;
-        document.getElementById('tentCost').innerHTML = tentCost;
-        document.getElementById('tents').innerHTML = tents;
-        
-          }
-        }
+    <script>
+      var points = 1
       
-        function addBomb(){
-          bombs +=points;
-          document.getElementById ('count').innerHTML = bombs;
-        }
-      
-        var nightmode = false;
-        
-        function switchmode(){
-            switchmode = !switchmode;
-            if (nightmode)
-              document.body.style.backgroundColor = "black";
-              document.body.style.color = "white"
-        }
-      
-        setInterval(function(){
-          count = points + tents * 15;
+      var bombs = 0;
+      var tentCost = 15;
+      var tents = 0;
+      function buyTents (){
+        if (bombs>=tentCost) {
+          bombs = bombs - tentCost;
+          points = points * 1.5
+          tentCost = Math.round(tentCost * 1.15);
           document.getElementById('count').innerHTML = bombs;
-        },);
-        
-        
-        
-        
-        
-        setInterval(function(){
-          count = points + container;
-          document.getElementById('count').innerHTML = count;
-         
-        }, 1000); // 1000ms = 1 second)
+          document.getElementById('tentCost').innerHTML = tentCost;
+          document.getElementById('tents').innerHTML = tents;
           
-      </script>
-
-
-    
-</body>
-</html>
+            }
+          }
+        
+          function addBomb(){
+            bombs +=points;
+            document.getElementById ('count').innerHTML = bombs;
+          }
+        
+          var nightmode = false;
+          
+          function switchmode(){
+              switchmode = !switchmode;
+              if (nightmode)
+                document.body.style.backgroundColor = "black";
+                document.body.style.color = "white"
+          }
+        
+          setInterval(function(){
+            count = points + tents * 15;
+            document.getElementById('count').innerHTML = bombs;
+          },);
+          
+          
+          
+          
+          
+          setInterval(function(){
+            count = points + container;
+            document.getElementById('count').innerHTML = count;
+           
+          }, 1000); // 1000ms = 1 second)
+            
+        </script>
+  
+  
+      
+  </body>
+  </html>
+  
