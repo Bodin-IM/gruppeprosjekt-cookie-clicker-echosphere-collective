@@ -82,13 +82,13 @@
             <img src="telt.png" alt="" height="50" 10%>
             <img src="telt.png" alt="" height="50" 10%>
             <div class="upgradelane"></div>
-  
           </div>
         </div>
         <h1>Buildings</h1>
         <div class="box">
             <h2>Telt</h2>
             <button onclick="buyTents()">tents [<span id="tentCost">15</span>] <span id="tents">0</span></button>
+            
             <div class="price_box">
                 <h3>15</h3>
                 <img src="Tsar-bomba.png" alt="" width="50px" height="50">
@@ -97,6 +97,7 @@
             
             <div class="box">
                 <h2>Bo bil</h2>
+                <button onclick="buybo_bil()">bo_bil [<span id="bo_bil_cost">5</span>] <span id="bo_bil">0</span></button>
                 <div class="price_box">
                     <h3>100</h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
@@ -130,18 +131,47 @@
       var bombs = 0;
       var tentCost = 15;
       var tents = 0;
+      var bo_bil_cost = 0;
+      var bo_bil = 0;
       function buyTents (){
         if (bombs>=tentCost) {
           bombs = bombs - tentCost;
-          points = points * 1.5
+          points = Math.round (points * 1.5)
           tentCost = Math.round(tentCost * 1.15);
           document.getElementById('count').innerHTML = bombs;
           document.getElementById('tentCost').innerHTML = tentCost;
           document.getElementById('tents').innerHTML = tents;
           
+        }
+      }
+      setInterval(function(){
+        count = points + tents * 15;
+        document.getElementById('count').innerHTML = bombs;
+      },);
+      
+      
+      
+      
+      function buybo_bil (){
+        if (bombs>=bo_bil_cost) {
+          bombs = bombs - bo_bil_cost;
+          points = Math.round (points * 1.5)
+          bo_bil_cost = Math.round(bo_bil_cost * 1.15);
+          document.getElementById('count').innerHTML = bombs;
+          document.getElementById('tentCost').innerHTML = bo_bil_cost;
+          document.getElementById('tents').innerHTML = bo_bil;
+          
             }
           }
+          
+          setInterval(function(){
+            count = points + bo_bil * 5;
+            document.getElementById('points').innerHTML = count;
+           
+          }, 1000); // 1000ms = 1 second)
         
+          
+          
           function addBomb(){
             bombs +=points;
             document.getElementById ('count').innerHTML = bombs;
@@ -156,20 +186,9 @@
                 document.body.style.color = "white"
           }
         
-          setInterval(function(){
-            count = points + tents * 15;
-            document.getElementById('count').innerHTML = bombs;
-          },);
           
           
           
-          
-          
-          setInterval(function(){
-            count = points + container;
-            document.getElementById('count').innerHTML = count;
-           
-          }, 1000); // 1000ms = 1 second)
             
         </script>
   
