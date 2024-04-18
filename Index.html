@@ -45,12 +45,11 @@
         <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
         <p>Bombs:<span id="count">0</span></p>
       </div>
-      <div class="middlepane">Test Page
-          <div class="middlebox1">
-              <div class="ownedbuildingsbox">
+      <div class='middlepane'>Test Page
+          <div  class="middlebox1">
+              <div id = "teltbox" class="ownedbuildingsbox">
               
-                <img src="telt.png" alt="" height="50" 10%>
-                <img src="telt.png" alt="" height="50" 10%>
+
             </div>
           </div>
           <div class="middlebox">
@@ -102,7 +101,7 @@
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                 </div>
                 <img src="Bo bil.png" width="250">
-                
+                /
             
                 <div class="box">
                     <h2>Container</h2>
@@ -120,18 +119,25 @@
                         </div>
                         <img src="cave.png" width="220">
         </div>
-  
+          
       </div>
     </div>
   </div>
     <script>
       var points = 1
-      
+      var bo_bil
       var bombs = 0;
       var tentCost = 15;
       var tents = 0;
       function buyTents (){
+        
+        
         if (bombs>=tentCost) {
+          let img = document.createElement('img');
+          
+          img.src = 'telt.png'
+          img.width = 100
+          document.getElementById('teltbox').appendChild(img);
           bombs = bombs - tentCost;
           points = points * 1.5
           tentCost = Math.round(tentCost * 1.15);
@@ -166,7 +172,7 @@
           
           
           setInterval(function(){
-            count = points + container;
+            count = points ;
             document.getElementById('count').innerHTML = count;
            
           }, 1000); // 1000ms = 1 second)
