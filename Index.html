@@ -41,9 +41,9 @@
         <h1>Test Page</h1>
         <h1>Bomb-Clicker</h1>
         <p>Bombe</p>
-        <p id ="instructions">your mission is to bomb Afganistan! click the bomb to bomb them</p>
+        <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
         <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
-        <p>Bombs:<span id="count">0</span></p>
+        <p>Bombs:<span id="bombAmount">0</span></p>
       </div>
       <div class="middlepane">Test Page
           <div class="middlebox1">
@@ -97,7 +97,7 @@
             
             <div class="box">
                 <h2>Bo bil</h2>
-                <button onclick="buybo_bil()">bo_bil [<span id="bo_bil_cost">5</span>] <span id="bo_bil">0</span></button>
+                <button onclick="buybo_bil()">bo_bil [<span id="bo_bil_cost">100</span>] <span id="bo_bil">0</span></button>
                 <div class="price_box">
                     <h3>100</h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
@@ -107,7 +107,9 @@
             
                 <div class="box">
                     <h2>Container</h2>
-                    <div class="price_box">
+                      <div class="price_box">
+                      <button onclick="buycontainer()">container [<span id="container_cost">1100</span>] <span id="container">0</span></button>
+                     
                         <h3>1100</h3>
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                     </div>
@@ -126,28 +128,31 @@
     </div>
   </div>
     <script>
-      var points = 1
       
-      var bombs = 0;
-      var tentCost = 15;
-      var tents = 0;
-      var bo_bil_cost = 0;
+      var bombs_per_second = 0; // hvor mye vi får hvert sekund
+      var bombs_per_click = 1 // hvor mye vi får per klikk
+      var bombs = 0; // hvor mange bomber vi har
+      var tentCost = 15; // pris på telt
+      var tents = 0; // hvor mange telt
+      var bo_bil_cost = 100; 
       var bo_bil = 0;
+      var bombs_per_bobil = 0;
+      var container_cost = 1100;
+      var container = 0;
+      var bombs_per_container = 0;
+      
       function buyTents (){
         if (bombs>=tentCost) {
           bombs = bombs - tentCost;
-          points = Math.round (points * 1.5)
+          tents = tents +1;
+          bombs_per_click = Math.round (bombs_per_click + 1)
           tentCost = Math.round(tentCost * 1.15);
-          document.getElementById('count').innerHTML = bombs;
+          document.getElementById('bombAmount').innerHTML = bombs;
           document.getElementById('tentCost').innerHTML = tentCost;
           document.getElementById('tents').innerHTML = tents;
           
         }
       }
-      setInterval(function(){
-        count = points + tents * 15;
-        document.getElementById('count').innerHTML = bombs;
-      },);
       
       
       
@@ -155,27 +160,46 @@
       function buybo_bil (){
         if (bombs>=bo_bil_cost) {
           bombs = bombs - bo_bil_cost;
-          points = Math.round (points * 1.5)
-          bo_bil_cost = Math.round(bo_bil_cost * 1.15);
-          document.getElementById('count').innerHTML = bombs;
-          document.getElementById('tentCost').innerHTML = bo_bil_cost;
-          document.getElementById('tents').innerHTML = bo_bil;
+          bo_bil = bo_bil +1;
+          bombs_per_second = Math.round (bombs_per_second + 1)
+          bo_bil_cost = Math.round(bo_bil_cost * 1.50);
+          document.getElementById('bombAmount').innerHTML = bombs;
+          document.getElementById('bo_bil_cost').innerHTML = bo_bil_cost;
+          document.getElementById('bo_bil').innerHTML = bo_bil;
+          
+            }
+          }
+          function buycontainer (){
+        if (bombs>=container_cost) {
+          bombs = bombs - container_cost;
+          container = container +1;
+          bombs_per_second = Math.round (bombs_per_second + 10)
+          container_cost = Math.round(container_cost* 1.50);
+          document.getElementById('bombAmount').innerHTML = bombs;
+          document.getElementById('container_cost').innerHTML = container_cost;
+          document.getElementById('container').innerHTML = container;
+          
           
             }
           }
           
-          setInterval(function(){
-            count = points + bo_bil * 5;
-            document.getElementById('points').innerHTML = count;
+          
+          function addBomb(){
+            bombs += bombs_per_click;
+            document.getElementById ("bombAmount").innerHTML = bombs;
            
+          }
+
+          // kjører hvert sekund, fra start av
+          setInterval(function(){
+            bombs += bombs_per_second
+            document.getElementById("bombAmount").innerHTML = bombs;
+
           }, 1000); // 1000ms = 1 second)
+
         
           
           
-          function addBomb(){
-            bombs +=points;
-            document.getElementById ('count').innerHTML = bombs;
-          }
         
           var nightmode = false;
           
