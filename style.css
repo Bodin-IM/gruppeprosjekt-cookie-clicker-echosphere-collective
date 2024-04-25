@@ -45,9 +45,38 @@
   flex-direction: column-reverse;
 
 }
+.middlebox2{
+  width: 100%;
+  height: 250px;
+  background-color: lightsteelblue;
+  background-image: url("breakingbad\ desert");
+  border: 5px solid lightslategray;
+  display: flex;
+  flex-direction: column-reverse;
 
+}
+.middlebox3{
+  width: 100%;
+  height: 250px;
+  background-color: lightsteelblue;
+  background-image: url("dockyard-background.jpg");
+  border: 5px solid lightslategray;
+  display: flex;
+  flex-direction: column-reverse;
+
+}
+.middlebox4{
+  width: 100%;
+  height: 250px;
+  background-color: lightsteelblue;
+  background-image: url("cliffside.png");
+  border: 5px solid lightslategray;
+  display: flex;
+  flex-direction: column-reverse;
+
+}
 .ownedbuildingsbox{
-     height: 25%;
+     height: 12,5%;
      width: 100%;
      display: flex;
      

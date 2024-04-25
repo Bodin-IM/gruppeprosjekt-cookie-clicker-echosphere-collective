@@ -47,25 +47,44 @@
       </div>
       <div class='middlepane'>Test Page
           <div  class="middlebox1">
-              <div id = "teltbox" class="ownedbuildingsbox">
-              
-
-            </div>
+              <div id = "teltbox1" class="ownedbuildingsbox"></div>
+              <div id = "teltbox2" class="ownedbuildingsbox"></div>
+              <div id = "teltbox3" class="ownedbuildingsbox"></div>
+              <div id = "teltbox4" class="ownedbuildingsbox"></div>
+              <div id = "teltbox5" class="ownedbuildingsbox"></div>
+              <div id = "teltbox6" class="ownedbuildingsbox"></div>
+              <div id = "teltbox7" class="ownedbuildingsbox"></div>
+              <div id = "teltbox8" class="ownedbuildingsbox"></div>
           </div>
-          <div class="middlebox">
-              <div class="ownedbuildingsbox">
-                
-            </div>
+          <div class="middlebox2">
+            <div id = "rvbox1" class="ownedbuildingsbox"></div>
+            <div id = "rvbox2" class="ownedbuildingsbox"></div>
+            <div id = "rvbox3" class="ownedbuildingsbox"></div>
+            <div id = "rvbox4" class="ownedbuildingsbox"></div>
+            <div id = "rvbox5" class="ownedbuildingsbox"></div>
+            <div id = "rvbox6" class="ownedbuildingsbox"></div>
+            <div id = "rvbox7" class="ownedbuildingsbox"></div>
+            <div id = "rvbox8" class="ownedbuildingsbox"></div>
           </div>
-          <div class="middlebox">
-            <div class="ownedbuildingsbox">
-              
-          </div>
+          <div class="middlebox3">
+            <div id = "containerbox1" class="ownedbuildingsbox"></div>
+            <div id = "containerbox2" class="ownedbuildingsbox"></div>
+            <div id = "containerbox3" class="ownedbuildingsbox"></div>
+            <div id = "containerbox4" class="ownedbuildingsbox"></div>
+            <div id = "containerbox5" class="ownedbuildingsbox"></div>
+            <div id = "containerbox6" class="ownedbuildingsbox"></div>
+            <div id = "containerbox7" class="ownedbuildingsbox"></div>
+            <div id = "containerbox8" class="ownedbuildingsbox"></div>
         </div>
-        <div class="middlebox">
-            <div class="ownedbuildingsbox">
-              
-          </div>
+        <div class="middlebox4">
+          <div id = "cavebox1" class="ownedbuildingsbox"></div>
+          <div id = "cavebox2" class="ownedbuildingsbox"></div>
+          <div id = "cavebox3" class="ownedbuildingsbox"></div>
+          <div id = "cavebox4" class="ownedbuildingsbox"></div>
+          <div id = "cavebox5" class="ownedbuildingsbox"></div>
+          <div id = "cavebox6" class="ownedbuildingsbox"></div>
+          <div id = "cavebox7" class="ownedbuildingsbox"></div>
+          <div id = "cavebox8" class="ownedbuildingsbox"></div>
         </div>
         
   
@@ -73,7 +92,7 @@
           
       </div>
       
-  
+      
       <div class="rightpane">
         <h1>Upgrades</h1>
         <div class="upgradebox">
@@ -133,11 +152,37 @@
         
         
         if (bombs>=tentCost) {
+          let x = Math.floor((Math.random() * 4) + 1);
+          console.log("The number is:", x)
           let img = document.createElement('img');
-          
-          img.src = 'telt.png'
-          img.width = 100
-          document.getElementById('teltbox').appendChild(img);
+          if (x == 1) {
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox1').appendChild(img);
+          }
+          if (x == 2){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox2').appendChild(img);
+
+          }
+          if (x == 3){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox3').appendChild(img);
+
+          }
+          if (x == 4){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox4').appendChild(img);
+
+          }
+
           bombs = bombs - tentCost;
           points = points * 1.5
           tentCost = Math.round(tentCost * 1.15);
