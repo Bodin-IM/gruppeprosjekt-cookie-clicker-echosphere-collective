@@ -41,35 +41,35 @@
               <div id = "teltbox8" class="ownedbuildingsbox"></div>
           </div>
           <div class="middlebox2">
-            <div id = "rvbox1" class="ownedbuildingsbox"></div>
-            <div id = "rvbox2" class="ownedbuildingsbox"></div>
-            <div id = "rvbox3" class="ownedbuildingsbox"></div>
-            <div id = "rvbox4" class="ownedbuildingsbox"></div>
-            <div id = "rvbox5" class="ownedbuildingsbox"></div>
-            <div id = "rvbox6" class="ownedbuildingsbox"></div>
-            <div id = "rvbox7" class="ownedbuildingsbox"></div>
-            <div id = "rvbox8" class="ownedbuildingsbox"></div>
+              <div id = "rvbox1" class="ownedbuildingsbox"></div>
+              <div id = "rvbox2" class="ownedbuildingsbox"></div>
+              <div id = "rvbox3" class="ownedbuildingsbox"></div>
+              <div id = "rvbox4" class="ownedbuildingsbox"></div>
+              <div id = "rvbox5" class="ownedbuildingsbox"></div>
+              <div id = "rvbox6" class="ownedbuildingsbox"></div>
+              <div id = "rvbox7" class="ownedbuildingsbox"></div>
+              <div id = "rvbox8" class="ownedbuildingsbox"></div>
           </div>
           <div class="middlebox3">
-            <div id = "containerbox1" class="ownedbuildingsbox"></div>
-            <div id = "containerbox2" class="ownedbuildingsbox"></div>
-            <div id = "containerbox3" class="ownedbuildingsbox"></div>
-            <div id = "containerbox4" class="ownedbuildingsbox"></div>
-            <div id = "containerbox5" class="ownedbuildingsbox"></div>
-            <div id = "containerbox6" class="ownedbuildingsbox"></div>
-            <div id = "containerbox7" class="ownedbuildingsbox"></div>
-            <div id = "containerbox8" class="ownedbuildingsbox"></div>
+              <div id = "containerbox1" class="ownedbuildingsbox"></div>
+              <div id = "containerbox2" class="ownedbuildingsbox"></div>
+              <div id = "containerbox3" class="ownedbuildingsbox"></div>
+              <div id = "containerbox4" class="ownedbuildingsbox"></div>
+              <div id = "containerbox5" class="ownedbuildingsbox"></div>
+              <div id = "containerbox6" class="ownedbuildingsbox"></div>
+              <div id = "containerbox7" class="ownedbuildingsbox"></div>
+              <div id = "containerbox8" class="ownedbuildingsbox"></div>
         </div>
-        <div class="middlebox4">
-          <div id = "cavebox1" class="ownedbuildingsbox"></div>
-          <div id = "cavebox2" class="ownedbuildingsbox"></div>
-          <div id = "cavebox3" class="ownedbuildingsbox"></div>
-          <div id = "cavebox4" class="ownedbuildingsbox"></div>
-          <div id = "cavebox5" class="ownedbuildingsbox"></div>
-          <div id = "cavebox6" class="ownedbuildingsbox"></div>
-          <div id = "cavebox7" class="ownedbuildingsbox"></div>
-          <div id = "cavebox8" class="ownedbuildingsbox"></div>
-        </div>
+          <div class="middlebox4">
+              <div id = "cavebox1" class="ownedbuildingsbox"></div>
+              <div id = "cavebox2" class="ownedbuildingsbox"></div>
+              <div id = "cavebox3" class="ownedbuildingsbox"></div>
+              <div id = "cavebox4" class="ownedbuildingsbox"></div>
+              <div id = "cavebox5" class="ownedbuildingsbox"></div>
+              <div id = "cavebox6" class="ownedbuildingsbox"></div>
+              <div id = "cavebox7" class="ownedbuildingsbox"></div>
+              <div id = "cavebox8" class="ownedbuildingsbox"></div>
+          </div>
         
   
   
@@ -132,7 +132,7 @@
       
       var bombs_per_second = 0; // hvor mye vi får hvert sekund
       var bombs_per_click = 1 // hvor mye vi får per klikk
-      var bombs = 0; // hvor mange bomber vi har
+      var bombs = 1000000; // hvor mange bomber vi har
       var tentCost = 15; // pris på telt
       var tents = 0; // hvor mange telt
       var bo_bil_cost = 100; 
@@ -150,14 +150,14 @@
         
         
         if (bombs>=tentCost) {
-          let x = Math.floor((Math.random() * 4) + 1);
+          let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
           if (x == 1) {
-            img.src = 'telt.png'
+            img.src = 'bo bil.png'
             img.width = 25
             img.height = 25
-            document.getElementById('teltbox1').appendChild(img);
+            document.getElementById('bo').appendChild(img);
           }
           if (x == 2){
             img.src = 'telt.png'
@@ -180,6 +180,33 @@
             document.getElementById('teltbox4').appendChild(img);
 
           }
+          if (x == 5) {
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox5').appendChild(img);
+          }
+          if (x == 6){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox6').appendChild(img);
+
+          }
+          if (x == 7){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox7').appendChild(img);
+
+          }
+          if (x == 8){
+            img.src = 'telt.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('teltbox8').appendChild(img);
+
+          }
 
           bombs = bombs - tentCost;
           tents = tents +1;
@@ -197,6 +224,10 @@
       
       function buybo_bil (){
         if (bombs>=bo_bil_cost) {
+          let x = Math.floor((Math.random() * 8) + 1);
+          console.log("The number is:", x)
+          let img = document.createElement('img');
+
           bombs = bombs - bo_bil_cost;
           bo_bil = bo_bil +1;
           bombs_per_second = Math.round (bombs_per_second + 1)
@@ -204,11 +235,125 @@
           document.getElementById('bombAmount').innerHTML = bombs;
           document.getElementById('bo_bil_cost').innerHTML = bo_bil_cost;
           document.getElementById('bo_bil').innerHTML = bo_bil;
+
+          if (x == 1) {
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox1').appendChild(img);
+          }
+          if (x == 2){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox2').appendChild(img);
+
+          }
+          if (x == 3){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox3').appendChild(img);
+
+          }
+          if (x == 4){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox4').appendChild(img);
+
+          }
+          if (x == 5) {
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox5').appendChild(img);
+          }
+          if (x == 6){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox6').appendChild(img);
+
+          }
+          if (x == 7){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox7').appendChild(img);
+
+          }
+          if (x == 8){
+            img.src = 'bo bil.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('rvbox8').appendChild(img);
+
+          }
           
             }
           }
           function buycontainer (){
         if (bombs>=container_cost) {
+          let x = Math.floor((Math.random() * 8) + 1);
+          console.log("The number is:", x)
+          let img = document.createElement('img');
+
+          if (x == 1) {
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox1').appendChild(img);
+          }
+          if (x == 2){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox2').appendChild(img);
+
+          }
+          if (x == 3){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox3').appendChild(img);
+
+          }
+          if (x == 4){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox4').appendChild(img);
+
+          }
+          if (x == 5) {
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox5').appendChild(img);
+          }
+          if (x == 6){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox6').appendChild(img);
+
+          }
+          if (x == 7){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox7').appendChild(img);
+
+          }
+          if (x == 8){
+            img.src = 'container.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('containerbox8').appendChild(img);
+
+          }
+
           bombs = bombs - container_cost;
           container = container +1;
           bombs_per_second = Math.round (bombs_per_second + 10)
