@@ -29,6 +29,7 @@
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
         <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
         <p>Bombs:<span id="bombAmount">0</span></p>
+        <h3 id="bombs_per_second"></h3>
       </div>
       <div class='middlepane'>Test Page
           <div  class="middlebox1">
@@ -86,7 +87,7 @@
             <img src="telt.png" alt="" height="50" 10%>
             <div class="upgradelane"></div>
           </div>
-        </div>3
+        </div>
         <h1>Buildings</h1>
         <div class="box">
             <h2>Telt</h2>
@@ -102,6 +103,7 @@
                 
                 <div class="price_box">
                     <h3 id="bo_bil_cost">100 </h3>
+                    <h3 id="bo_bil">0</h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                 </div>
                 <img src="Bo bil.png" width="250" onclick="buybo_bil()"/>
@@ -145,6 +147,7 @@
       var caveCost = 12000;
       var cave = 0;
       var bombs_per_cave = 0;
+
       
       
       function buyTents (){
@@ -155,7 +158,7 @@
           console.log("The number is:", x)
           let img = document.createElement('img');
           if (x == 1) {
-            img.src = 'bo bil.png'
+            img.src = 'telt.png'
             img.width = 25
             img.height = 25
             document.getElementById('teltbox1').appendChild(img);
@@ -369,6 +372,64 @@
           }
           function buyCave (){
         if (bombs>=caveCost) {
+          let x = Math.floor((Math.random() * 8) + 1);
+          console.log("The number is:", x)
+          let img = document.createElement('img');
+
+          if (x == 1) {
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox1').appendChild(img);
+          }
+          if (x == 2){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox2').appendChild(img);
+
+          }
+          if (x == 3){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox3').appendChild(img);
+
+          }
+          if (x == 4){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox4').appendChild(img);
+
+          }
+          if (x == 5) {
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox5').appendChild(img);
+          }
+          if (x == 6){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox6').appendChild(img);
+
+          }
+          if (x == 7){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox7').appendChild(img);
+
+          }
+          if (x == 8){
+            img.src = 'cave.png'
+            img.width = 25
+            img.height = 25
+            document.getElementById('cavebox8').appendChild(img);
+
+          }
           bombs = bombs - caveCost;
           cave = cave +1;
           bombs_per_second = Math.round (bombs_per_second + 10)
