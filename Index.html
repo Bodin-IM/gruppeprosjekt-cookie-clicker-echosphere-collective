@@ -15,7 +15,7 @@
   
   
   
-  
+    
   <div class="container">
     <div class="toppane">
 
@@ -23,7 +23,6 @@
     </div>
     <div class="d-flex">
       <div class="leftpane">
-
         <h1>Bomb-Clicker</h1>
         <p>Bombe</p>
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
@@ -31,7 +30,7 @@
         <p>Bombs:<span id="bombAmount">0</span></p>
         <h3 id="bombs_per_second"></h3>
       </div>
-      <div class='middlepane'>Test Page
+      <div class='middlepane'>
           <div  class="middlebox1">
               <div id = "teltbox1" class="ownedbuildingsbox"></div>
               <div id = "teltbox2" class="ownedbuildingsbox"></div>
@@ -98,6 +97,7 @@
             </div>
             <img src="telt.png" width="250" onclick="buyTents()"/>
             
+            
             <div class="box">
                 <h2>Bo bil</h2>
                 
@@ -132,15 +132,32 @@
     </div>
   </div>
     <script>
+
+      const Tent_sound = new Audio();
+      Tent_sound.src="foley_blanket_shake_004.mp3";
+      const car_sound = new Audio();
+      car_sound.src="zapsplat_vehicles_car_horn_2x_short_beeps_2017_toyota_corolla_79490.mp3";
+      const breaking_bad_intro = new Audio();
+      breaking_bad_intro.src="breakingBad.mp4";
+      const container_sound = new Audio();
+      container_sound.src="Metal Bang Sound Effect.mp3";
+      const cave_sound = new Audio()
+      cave_sound.src ="Cave1.ogg.mp3";
+      const backgroundSound = new Audio();
+      backgroundSound.src ="backgroundSound.mp3";
+      
+      
+      
       
       var bombs_per_second = 0; // hvor mye vi får hvert sekund
       var bombs_per_click = 1 // hvor mye vi får per klikk
-      var bombs = 1000000; // hvor mange bomber vi har
+      var bombs = 0; // hvor mange bomber vi har
       var tentCost = 15; // pris på telt
       var tents = 0; // hvor mange telt
       var bo_bil_cost = 100; 
       var bo_bil = 0;
       var bombs_per_bobil = 0;
+      var bo_bil_count =0;
       var container_cost = 1100;
       var container = 0;
       var bombs_per_container = 0;
@@ -154,6 +171,7 @@
         
         
         if (bombs>=tentCost) {
+          Tent_sound.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
@@ -228,10 +246,16 @@
       
       function buybo_bil (){
         if (bombs>=bo_bil_cost) {
+          car_sound.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
-
+          bo_bil_count += 1
+          if (bo_bil_count == 10 ) {
+            console.log('10 bobils, play breaking bad')
+            breaking_bad_intro.play()
+            bo_bil_count = 0
+          }
           bombs = bombs - bo_bil_cost;
           bo_bil = bo_bil +1;
           bombs_per_second = Math.round (bombs_per_second + 1)
@@ -300,6 +324,7 @@
           }
           function buycontainer (){
         if (bombs>=container_cost) {
+          container_sound.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
@@ -431,8 +456,9 @@
 
           }
           bombs = bombs - caveCost;
+          cave_sound.play()
           cave = cave +1;
-          bombs_per_second = Math.round (bombs_per_second + 10)
+          bombs_per_second = Math.round (bombs_per_second + 127)
           caveCost = Math.round(caveCost* 1.50);
           document.getElementById('bombAmount').innerHTML = bombs;
           document.getElementById('caveCost').innerHTML = caveCost;
