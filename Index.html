@@ -27,7 +27,7 @@
         <h1>Bomb-Clicker</h1>
         <p>Bombe</p>
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
-        <img src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
+        <img id="bombimage" src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
         <p>Bombs:<span id="bombAmount">0</span></p>
         <h3 id="bombs_per_second"></h3>
       </div>
@@ -96,18 +96,16 @@
                 <h3 id="tentCost">15</h3>
                 <img src="Tsar-bomba.png" alt="" width="50px" height="50">
             </div>
-            <img src="telt.png" width="250" onclick="buyTents()"/>
+            <img id="telt_image" src="telt.png" width="250" onclick="buyTents()"/>
             
             <div class="box">
                 <h2>Bo bil</h2>
                 
                 <div class="price_box">
                     <h3 id="bo_bil_cost">100 </h3>
-                    <h3 id="bo_bil">0</h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                 </div>
-                <img src="Bo bil.png" width="250" onclick="buybo_bil()"/>
-                /
+                <img id="rv_image" src="Bo bil.png" width="250" onclick="buybo_bil()"/>
             
                 <div class="box">
                     <h2>Container</h2>
@@ -117,7 +115,7 @@
                         <h3 id="container_cost">1100</h3>
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                     </div>
-                    <img src="container.png" width="220" onclick="buycontainer()"/>
+                    <img id="container_image" src="container.png" width="220" onclick="buycontainer()"/>
   
                     <div class="box">
                         <h2>Cave</h2>
@@ -135,7 +133,7 @@
       
       var bombs_per_second = 0; // hvor mye vi får hvert sekund
       var bombs_per_click = 1 // hvor mye vi får per klikk
-      var bombs = 1000000; // hvor mange bomber vi har
+      var bombs = 0; // hvor mange bomber vi har
       var tentCost = 15; // pris på telt
       var tents = 0; // hvor mange telt
       var bo_bil_cost = 100; 
@@ -279,7 +277,6 @@
             img.width = 25
             img.height = 25
             document.getElementById('rvbox6').appendChild(img);
-
           }
           if (x == 7){
             img.src = 'bo bil.png'

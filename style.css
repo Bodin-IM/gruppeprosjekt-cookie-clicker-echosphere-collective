@@ -40,6 +40,7 @@
   height: 250px;
   background-color: lightsteelblue;
   background-image: url("Jungle.jpg");
+
   border: 5px solid lightslategray;
   display: flex;
   flex-direction: column-reverse;
@@ -104,10 +105,67 @@ background-color: antiquewhite;
 text-align: center;
 
 
-}
-#instructions{
-    border: double 10px black;
 
+}
+
+#bombimage{
+  transition: 100ms;
+}
+
+#bombimage:hover{
+  transform: scale(1.3);
+  
+}
+#bombimage:active{
+  transform: scale(1.1);
+}
+#telt_image{
+  transition: 100ms;
+}
+
+#telt_image:hover{
+  transform: scale(1.3);
+  
+}
+#telt_image:active{
+  transform: scale(1.1);
+}
+
+#rv_image{
+  transition: 100ms;
+}
+
+#rv_image:hover{
+  transform: scale(1.3);
+  
+}
+#rv_image:active{
+  transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#instructions{
+  border: double 10px black;
+  
     }
 
   .upgradebox{
