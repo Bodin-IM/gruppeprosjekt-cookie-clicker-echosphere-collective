@@ -29,7 +29,8 @@
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
         <img id="bombimage" src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
         <p>Bombs:<span id="bombAmount">0</span></p>
-        <h3 id="bombs_per_second"></h3>
+        <h3 id="bombs_per_second">Bombs per second</h3>
+
       </div>
       <div class='middlepane'>Test Page
           <div  class="middlebox1">
@@ -121,9 +122,9 @@
                         <h2>Cave</h2>
                         <div class="price_box">
                             <h3 id="caveCost">12000</h3>
-                            <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                            <img   src="Tsar-bomba.png" alt="" width="50px" height="50">
                         </div>
-                        <img src="cave.png" width="220" onclick="buyCave()"/>
+                        <img id="cave_image" src="cave.png" width="220" onclick="buyCave()"/>
         </div>
           
       </div>
@@ -449,6 +450,7 @@
           setInterval(function(){
             bombs += bombs_per_second
             document.getElementById("bombAmount").innerHTML = bombs;
+            document.getElementById("bombs_per_second").innerHTML =bomb
 
           }, 1000); // 1000ms = 1 second)
 
