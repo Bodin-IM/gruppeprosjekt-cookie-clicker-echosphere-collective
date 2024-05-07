@@ -20,6 +20,9 @@
     <div class="toppane">
 
       <input type = "button" value="Toggle Display" onclick="switchMode()"/>
+        <div class="price_box">
+          <h3>Credits: Sindre aka den som gjorde mest. Nikolai aka: Sindre sin sidekick. Og en spesiel takk til Christian for å hjelpe med noen få deler av koden</h3>
+        </div>
     </div>
     <div class="d-flex">
       <div class="leftpane">
@@ -91,11 +94,12 @@
         </div>
         <h1>Buildings</h1>
         <div class="box">
-            <h2>Telt</h2>
-           
-            <div class="price_box">
-                <h3 id="tentCost">15</h3>
-                <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+          <h2>Telt</h2>
+          
+          <div class="price_box">
+            <h3 id="tentCost">15</h3>
+            <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+            <h2 id="tents">0</h2>
             </div>
             <img id="telt_image" src="telt.png" width="250" onclick="buyTents()"/>
               
@@ -106,6 +110,7 @@
                 <div class="price_box">
                     <h3 id="bo_bil_cost">100 </h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                    <h2 id="bo bil">0</h2>
                 </div>
                 <img id="rv_image" src="Bo bil.png" width="250" onclick="buybo_bil()"/>
             
@@ -116,6 +121,7 @@
                      
                         <h3 id="container_cost">1100</h3>
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                        <h2 id="container">0</h2>
                     </div>
                     <img id="container_image" src="container.png" width="220" onclick="buycontainer()"/>
   
@@ -124,6 +130,7 @@
                         <div class="price_box">
                             <h3 id="caveCost">12000</h3>
                             <img   src="Tsar-bomba.png" alt="" width="50px" height="50">
+                            <h2 id="cave">0</h2>
                         </div>
                         <img id="cave_image" src="cave.png" width="220" onclick="buyCave()"/>
         </div>
@@ -452,6 +459,10 @@
             bombs += bombs_per_second
             document.getElementById("bombAmount").innerHTML = bombs;
             document.getElementById("bombs_per_second").innerHTML =bombs_per_second
+            document.getElementById("tents").innerHTML = tents
+            document.getElementById("bo bil").innerHTML = bo_bil
+            document.getElementById("container").innerHTML = container
+            document.getElementById("cave").innerHTML = cave
 
           }, 1000); // 1000ms = 1 second)
 
@@ -468,7 +479,22 @@
                 document.body.style.color = "white"
           }
         
-          
+                const createParticle = (x, y) => {
+          const imageClicks = document.querySelector(".click_container");
+          const particle = document.createElement("img");
+          particle.setAttribute("src", "img/particle.png")
+          particle.setAttribute("class", "particle")
+          particle.style.left = Math.floor(Math.random() * 190) + 140 + "px";
+          particle.style.top = Math.floor(Math.random() * 400) + 400 + "px";
+          particle.style.width ="100px";
+          particle.style.height = "100px";
+          particle.style.position = "absolute";
+          imageClicks.appendChild(particle);
+
+          setTimeout(() => {
+              imageClicks.removeChild(particle);
+          }, 3000);
+}
           
           
             

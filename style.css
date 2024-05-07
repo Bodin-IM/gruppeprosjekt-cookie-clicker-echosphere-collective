@@ -202,6 +202,7 @@ text-align: center;
     height: 62.5px;
     background-color: rgb(103, 103, 119);
     border: 5px;
+    display: flex;
     flex-direction: row;
   }
 .box{
