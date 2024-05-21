@@ -98,8 +98,8 @@
            
             <div class="price_box">
                 <h3 id="tentCost">15</h3>
-                <h3 id="tents">0</h3>
                 <img src="Tsar-bomba.png" alt="" width="50px" height="50">
+                <h3 id="tents">0</h3>
             </div>
             <img id="telt_image" src="telt.png" width="250" onclick="buyTents()"/>
               
@@ -121,7 +121,7 @@
                     
                      
                         <h3 id="container_cost">1100</h3>
-                        <h3 id="container">0</h3>
+                        
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                         <h2 id="container">0</h2>
                     </div>
@@ -247,7 +247,7 @@ document.body.appendChild(sound);
             document.getElementById('teltbox8').appendChild(img);
 
           }
-
+          Tent_sound.play()
           bombs = bombs - tentCost;
           tents = tents +1;
           bombs_per_click = Math.round (bombs_per_click + 1)
@@ -264,6 +264,7 @@ document.body.appendChild(sound);
       
       function buybo_bil (){
         if (bombs>=bo_bil_cost) {
+          car_sound.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
@@ -335,6 +336,7 @@ document.body.appendChild(sound);
           }
           function buycontainer (){
         if (bombs>=container_cost) {
+          mexican.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
@@ -489,7 +491,7 @@ document.body.appendChild(sound);
             document.getElementById("bombAmount").innerHTML = bombs;
             document.getElementById("bombs_per_second").innerHTML =bombs_per_second
             document.getElementById("tents").innerHTML = tents
-            document.getElementById("bo bil").innerHTML = bo_bil
+            document.getElementById("bo_bil").innerHTML = bo_bil
             document.getElementById("container").innerHTML = container
             document.getElementById("cave").innerHTML = cave
 
