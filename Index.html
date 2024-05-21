@@ -336,11 +336,16 @@ document.body.appendChild(sound);
           }
           function buycontainer (){
         if (bombs>=container_cost) {
-          mexican.play()
+         container_sound.play()
           let x = Math.floor((Math.random() * 8) + 1);
           console.log("The number is:", x)
           let img = document.createElement('img');
-
+          
+        container +=1
+    if (containerSound__count== 10 ){
+      mexican.play()
+      container=0
+        }
           if (x == 1) {
             img.src = 'container.png'
             img.width = 25
