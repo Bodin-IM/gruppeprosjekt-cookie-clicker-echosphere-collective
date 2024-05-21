@@ -29,7 +29,7 @@
         <h1>Bomb-Clicker</h1>
         <p>Bombe</p>
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
-        <img id ="bomb" src="Tsar-bomba.png" width="80%" />
+        <img id ="bomb" onclick="addBomb()"  src="Tsar-bomba.png" width="80%" />
         <p>Bombs:<span id="bombAmount">0</span></p>
         <h3 id="bombs_per_second"></h3>
       </div>
@@ -96,6 +96,7 @@
            
             <div class="price_box">
                 <h3 id="tentCost">15</h3>
+                <h3 id="tents">0</h3>
                 <img src="Tsar-bomba.png" alt="" width="50px" height="50">
             </div>
             <img src="telt.png" width="250" onclick="buyTents()"/>
@@ -119,6 +120,7 @@
                     
                      
                         <h3 id="container_cost">1100</h3>
+                        <h3 id="container">0</h3>
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                     </div>
                     <img src="container.png" width="220" onclick="buycontainer()"/>
@@ -127,6 +129,8 @@
                         <h2>Cave</h2>
                         <div class="price_box">
                             <h3 id="caveCost">12000</h3>
+                            <h3 id="cave">0</h3>
+
                             <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                         </div>
                         <img src="cave.png" width="220" onclick="buyCave()"/>
