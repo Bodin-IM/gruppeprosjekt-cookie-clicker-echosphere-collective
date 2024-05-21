@@ -108,15 +108,15 @@ text-align: center;
 
 }
 
-#bombimage{
+#bomb{
   transition: 100ms;
 }
 
-#bombimage:hover{
+#bomb:hover{
   transform: scale(1.3);
   
 }
-#bombimage:active{
+#bomb:active{
   transform: scale(1.1);
 }
 #telt_image{
