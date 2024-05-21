@@ -26,10 +26,11 @@
     </div>
     <div class="d-flex">
       <div class="leftpane">
+        <p id="leftpane">
         <h1>Bomb-Clicker</h1>
         <p>Bombe</p>
         <p id ="instructions">your mission is to bomb Afghanistan! click the bomb to bomb them</p>
-        <img id="bombimage" src="Tsar-bomba.png" width="80%" onclick="addBomb()"/>
+        <img id ="bomb" onclick="addBomb()"  src="Tsar-bomba.png" width="80%" />
         <p>Bombs:<span id="bombAmount">0</span></p>
         <h4 id="bombs_per_second">Bombs per second</h4>
 
@@ -93,12 +94,12 @@
         </div>
         <h1>Buildings</h1>
         <div class="box">
-          <h2>Telt</h2>
-          
-          <div class="price_box">
-            <h3 id="tentCost">15</h3>
-            <img src="Tsar-bomba.png" alt="" width="50px" height="50">
-            <h2 id="tents">0</h2>
+            <h2>Telt</h2>
+           
+            <div class="price_box">
+                <h3 id="tentCost">15</h3>
+                <h3 id="tents">0</h3>
+                <img src="Tsar-bomba.png" alt="" width="50px" height="50">
             </div>
             <img id="telt_image" src="telt.png" width="250" onclick="buyTents()"/>
               
@@ -110,7 +111,7 @@
                 <div class="price_box">
                     <h3 id="bo_bil_cost">100 </h3>
                     <img src="Tsar-bomba.png" alt="" width="50px" height="50">
-                    <h2 id="bo bil">0</h2>
+                    <h2 id="bo_bil">0</h2>
                 </div>
                 <img id="rv_image" src="Bo bil.png" width="250" onclick="buybo_bil()"/>
             
@@ -120,6 +121,7 @@
                     
                      
                         <h3 id="container_cost">1100</h3>
+                        <h3 id="container">0</h3>
                         <img src="Tsar-bomba.png" alt="" width="50px" height="50">
                         <h2 id="container">0</h2>
                     </div>
@@ -140,6 +142,31 @@
   </div>
     <script>
       
+      const Tent_sound = new Audio();
+Tent_sound.src="foley_blanket_shake_004.mp3";
+const car_sound = new Audio();
+car_sound.src="zapsplat_vehicles_car_horn_2x_short_beeps_2017_toyota_corolla_79490.mp3";
+const breaking_bad_intro = new Audio();
+breaking_bad_intro.src="breakingBad.mp4";
+const container_sound = new Audio();
+container_sound.src="Metal Bang Sound Effect.mp3";
+const cave_sound = new Audio()
+cave_sound.src ="Cave1.ogg.mp3";
+const backGroundSound = new Audio();
+backGroundSound.src ="backGroundSound.mp4";
+const mexican = new Audio();
+mexican.src ="hola esto es américa.mp3";
+const A10Sound =new Audio();
+A10Sound.src = "A10 sound.mp4";
+
+sound = document.createElement("audio")
+sound.src= "backGroundSound.mp4"
+sound.setAttribute("preload","auto")
+sound.setAttribute("controls","none")
+sound.style.display = "none";
+document.body.appendChild(sound);
+
+      
       var bombs_per_second = 0; // hvor mye vi får hvert sekund
       var bombs_per_click = 1 // hvor mye vi får per klikk
       var bombs = 0; // hvor mange bomber vi har
@@ -147,9 +174,11 @@
       var tents = 0; // hvor mange telt
       var bo_bil_cost = 100; 
       var bo_bil = 0;
+      var bo_bilSound_count=0;
       var bombs_per_bobil = 0;
       var container_cost = 1100;
       var container = 0;
+      var containerSound__count =0;
       var bombs_per_container = 0;
       var caveCost = 12000;
       var cave = 0;
@@ -495,13 +524,23 @@
               imageClicks.removeChild(particle);
           }, 3000);
 }
+  function A10_uppgrade(){
+        let jpg = document.createElement('jpg');
+        jpg.src = 'A10.jpg';
+        jpg.height = 25;
+        jpg.width = 25;
+        document.getElementById('leftpane').appendChild(jpg);
+        jpg.addEventListener('click',A10_uppgrade);
+      console.log ('feil');
+          }
           
+      var a10_timer = setInterval(A10_uppgrade,1000)
+      A10_uppgrade()
           
             
         </script>
-  
+    <script src="Main.js"></script>
   
       
   </body>
   </html>
-  
